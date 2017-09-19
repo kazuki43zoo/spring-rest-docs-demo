@@ -1,0 +1,95 @@
+= RESTful API Guide -Demo-
+Kazuki Shimizu;
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 4
+:sectlinks:
+
+[[overview]]
+= Overview
+
+[[overview-http-verbs]]
+== HTTP verbs
+
+RESTful notes tries to adhere as closely as possible to standard HTTP and REST conventions in its
+use of HTTP verbs.
+
+|===
+| Verb | Usage
+
+| `GET`
+| Used to retrieve a resource
+
+| `POST`
+| Used to create a new resource
+
+| `PUT`
+| Used to update an existing resource
+
+| `DELETE`
+| Used to delete an existing resource
+|===
+
+[[overview-http-status-codes]]
+== HTTP status codes
+
+RESTful notes tries to adhere as closely as possible to standard HTTP and REST conventions in its
+use of HTTP status codes.
+
+|===
+| Status code | Usage
+
+| `200 OK`
+| The request completed successfully
+
+| `201 Created`
+| A new resource has been created successfully. The resource's URI is available from the response's
+`Location` header
+
+| `204 No Content`
+| An update to an existing resource has been applied successfully
+
+| `400 Bad Request`
+| The request was malformed. The response body will include an error providing further information
+
+| `404 Not Found`
+| The requested resource did not exist
+|===
+
+
+[[resources]]
+= Resources
+
+[[resources-accounts]]
+== Accounts
+
+
+[[resources-account-create]]
+=== Create new account
+
+A `POST` request will create new account.
+
+operation::post-account[snippets='http-request,request-headers,request-fields,http-response,response-headers,curl-request']
+
+[[resources-account-create]]
+=== Retrieve list of account
+
+A `GET` request will retrieve list of account.
+
+operation::get-accounts[snippets='http-request,curl-request,http-response,response-fields']
+
+
+[[resources-account]]
+== Account
+
+
+[[resources-account-retrieve]]
+=== Retrieve a account
+
+A `GET` request will retrieve the account.
+
+operation::get-account[snippets='http-request,path-parameters,curl-request,http-response,response-fields']
+
+
